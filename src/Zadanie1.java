@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Test {
+public class Zadanie1 {
     public static void main(String[] args) {
         //1.Napisz program, który pobierze od użytkownika średnicę okręgu
         // (zmienną typu float) i obliczy obwód tego okręgu. Do obliczeń przyjmij najpierw π = 3.14,

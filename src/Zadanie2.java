@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ZadaniaSda {
+public class Zadanie2 {
     public static void main(String[] args) {
         System.out.println();
         //2. ZADANIE 2.
@@ -14,10 +14,16 @@ public class ZadaniaSda {
         float scales = scanner.nextFloat();
         System.out.println("Podaj wzrost");
         float increase = scanner.nextFloat();
-        float results = calc (increase,scales);
+        float results = calc (scales,increase);
+        if (results>18.5 || results > 24.9) {
+            System.out.println("Twoje BMI jest optymalne " + results);
+        } else {
+            System.out.println("Twoje BMI nie jest optymalne" + results);
+        }
+
     }
 
-    public static float calc(float increase, float scales) {
+    public static float calc(float scales, float increase) {
         float exponentiation = (float) Math.pow(increase, 2);
         float BMI = scales / (exponentiation);
         return BMI;
