@@ -12,5 +12,6 @@ public class Test {
         double PI = Math.PI;
         float circumferenceofacircle= (float) (diamter * PI);
         System.out.println("Obwodkoła wynosi " + circumferenceofacircle);
+
     }
 }
