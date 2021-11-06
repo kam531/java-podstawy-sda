@@ -1,46 +1,39 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Zadanie15 {
     public static void main(String[] args) {
-        dane();
+        pobierzDane();
+        //Napisz program, który pobierze od użytkownika 10
+        // dowolnie dużych liczb (zmiennych typu int) i wypisze te, które wystąpiły minimum dwukrotnie.
     }
 
-    public static void dane() {
+    public static void pobierzDane() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj 10 liczb: ");
-        int userInt1 = scanner.nextInt();
-        int userInt2 = scanner.nextInt();
-        int userInt3 = scanner.nextInt();
-        int userInt4 = scanner.nextInt();
-        int userInt5 = scanner.nextInt();
-        int userInt6 = scanner.nextInt();
-        int userInt7 = scanner.nextInt();
-        int userInt8 = scanner.nextInt();
-        int userInt9 = scanner.nextInt();
-        int userInt10 = scanner.nextInt();
-        int[] arrayUserInt = new int[10];
-        arrayUserInt[0] = userInt1;
-        arrayUserInt[1] = userInt2;
-        arrayUserInt[2] = userInt3;
-        arrayUserInt[3] = userInt4;
-        arrayUserInt[4] = userInt5;
-        arrayUserInt[5] = userInt6;
-        arrayUserInt[6] = userInt7;
-        arrayUserInt[7] = userInt8;
-        arrayUserInt[8] = userInt9;
-        arrayUserInt[9] = userInt10;
-        int array=0;
+        System.out.print("Podaj 10 liczb: ");
 
-        for (int i = 0; i < arrayUserInt.length; i++) {
-            for (int j = 0; j < arrayUserInt.length; j++) {
-                if (i!=j && arrayUserInt[i] == arrayUserInt[j]) {
+        final List<Integer> arrayUserInt = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            arrayUserInt.add(scanner.nextInt());
+        }
 
-                    array =  arrayUserInt[i];
+        final List<Integer> listaZPowtorzeniami = new ArrayList<>();
 
+        for (int i = 0; i < arrayUserInt.size(); i++) {
+            for (int j = 0; j < arrayUserInt.size(); j++) {
+                // sprawdzam czy jest powtórzenie
+                final Integer a = arrayUserInt.get(i);
+                final Integer b = arrayUserInt.get(j);
+                if (i != j && a.equals(b)) {
+                    //sprawdzenie czy powtórzona liczba jest w liście z powtórzeniami
+                    if (!listaZPowtorzeniami.contains(a)) {
+                        listaZPowtorzeniami.add(a);
+                    }
                 }
             }
         }
-        System.out.println(array);
+        listaZPowtorzeniami.forEach(System.out::println);
     }
 }
 
